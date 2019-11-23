@@ -23,7 +23,14 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/css/styles.css', '~/assets/css/fonts.css'],
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
+      }
+    }
+  },
   /*
    ** Plugins to load before mounting the App
    */
@@ -57,6 +64,21 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
+        })
+
+
+      }
+    }
   }
 }
