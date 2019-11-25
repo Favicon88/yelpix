@@ -1,29 +1,35 @@
 <template>
   <header class="header">
     <div class="container-fluid">
-      <a class="logo" href="index.html"
-        ><img src="/images/home/logo.png" alt="Optioning" />
-      </a>
+      <nuxt-link class="logo" to="/"
+        ><img src="/images/home/logo.png" alt="Optioning"
+      /></nuxt-link>
       <nav class="menu-wrp">
         <div class="mob-trigger"><span></span></div>
         <ul>
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="assets.html">For Traders</a></li>
+          <li><nuxt-link to="/about-us">About Us</nuxt-link></li>
+          <li><nuxt-link to="/assets">For Traders</nuxt-link></li>
           <li class="submenu">
             <span>Documentation</span>
             <ul>
               <li>
-                <a href="terms-and-conditions.html">Terms & <br />Conditions</a>
+                <nuxt-link to="/terms-and-conditions"
+                  >Terms & <br />Conditions</nuxt-link
+                >
               </li>
               <li>
-                <a href="privacy-policy.html">Privacy <br />Policy</a>
-              </li>
-              <li><a href="payment-policy.html">Deposit Promotion</a></li>
-              <li>
-                <a href="withdrawal-policy.html">Withdrawal <br />Policy </a>
+                <nuxt-link to="/privacy-policy">Privacy <br />Policy</nuxt-link>
               </li>
               <li>
-                <a href="refund-policy.html">Refund <br />Policy</a>
+                <nuxt-link to="/payment-policy">Deposit Promotion</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/withdrawal-policy"
+                  >Withdrawal <br />Policy</nuxt-link
+                >
+              </li>
+              <li>
+                <nuxt-link to="/refund-policy">Refund <br />Policy</nuxt-link>
               </li>
             </ul>
           </li>
@@ -48,7 +54,10 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  head: {
+    script: [{ src: '/js/snap.svg-min.js' }]
+  }
 }
 </script>
 

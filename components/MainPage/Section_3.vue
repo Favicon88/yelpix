@@ -67,7 +67,7 @@
       </div>
       <div class="scene-element top-tube">
         <img src="/images/home/screen-3/tube-top.png" alt="" />
-        <div class="coin">
+        <div :class="{ on: activeSection }" class="coin">
           <img src="/images/home/screen-3/coin.png" alt="" />
         </div>
         <div class="text-wrp">
@@ -114,7 +114,27 @@
 
 <script>
 export default {
-  name: 'Section3'
+  name: 'Section3',
+  data() {
+    return {
+      coinOn: false
+    }
+  },
+  computed: {
+    activeSection() {
+      if (this.$store.getters.getActiveSection === 2 && this.coinOn === false) {
+        this.coinOnTrue()
+        return true
+      } else {
+        return false
+      }
+    }
+  },
+  methods: {
+    coinOnTrue() {
+      this.coinOn = true
+    }
+  }
 }
 </script>
 
@@ -124,6 +144,19 @@ export default {
   position: relative;
   width: 100%;
   overflow: hidden;
+}
+
+#screen_3 .background img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 #screen_3 .coin.on {
@@ -239,6 +272,114 @@ export default {
   background-color: #fff;
 }
 
+#screen_3 .scene-element.lights .lights-item .item-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 40px;
+  line-height: 48px;
+  color: #fff;
+  background-color: rgba(3, 9, 77, 0.4);
+  padding: 10px;
+  min-height: 84px;
+  width: 100%;
+  vertical-align: middle;
+  display: inline-flex;
+  -ms-align-items: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#screen_3 .scene-element.lights .lights-item .item-body {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+#screen_3 .scene-element.lights .lights-item .item-body img {
+  width: 100%;
+}
+
+#screen_3 .scene-element.bottom-tube,
+#screen_3 .scene-element.top-tube {
+  bottom: 50px;
+  height: 412px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 3;
+  transition: all 0.5s;
+}
+
+#screen_3 .scene-element.bottom-tube img,
+#screen_3 .scene-element.top-tube img {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+#screen_3 .scene-element .coin {
+  height: 296px;
+  width: 296px;
+  position: absolute;
+  left: -150px;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  margin: auto 0;
+  transition: all 0;
+  transition-delay: 0.5s;
+}
+
+#screen_3 .scene-element .text-wrp {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  width: 100%;
+}
+
+#screen_3 .scene-element .text-wrp .text {
+  position: relative;
+  display: inline-block;
+  background-color: rgba(3, 9, 77, 0.33);
+  padding: 15px 75px 50px;
+}
+
+#screen_3 .scene-element .text-wrp .h1,
+#screen_3 .scene-element .text-wrp h1 {
+  color: #fff;
+}
+
+#screen_3 .scene-element .text-wrp .button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 265px;
+  background-color: #b52c49;
+  border-color: #b52c49;
+  color: #fff;
+}
+
+#screen_3 .scene-element .text-wrp .button:hover,
+#screen_4 .scene-element.bottom-coin .button:hover {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
 @media screen and (max-width: 2000px) {
   #screen_3 .scene-element.lights {
     bottom: 200px;
@@ -280,19 +421,6 @@ export default {
     font-family: 'OpenSans BoldItalic', sans-serif;
   }
 
-  #screen_3 .background img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    -o-object-fit: cover;
-    object-fit: cover;
-  }
-
   #screen_3 .scene-element .text-wrp p {
     font-size: 32px;
     line-height: 42px;
@@ -300,6 +428,32 @@ export default {
 
   #screen_3 .scene-element .text-wrp .button {
     margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  #screen_3 .scene-element.lights .lights-item .item-light {
+    top: 20px;
+  }
+
+  #screen_3 .scene-element.lights .lights-item .item-light .icon img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  #screen_3 .scene-element.lights .lights-item .item-text {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  #screen_3 .scene-element.lights .lights-item {
+    width: 300px;
+    height: 520px;
+  }
+
+  #screen_3 .scene-element .text-wrp p {
+    font-size: 22px;
+    line-height: 32px;
   }
 }
 

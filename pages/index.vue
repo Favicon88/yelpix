@@ -85,6 +85,7 @@ export default {
     moveDown() {
       this.inMove = true
       this.activeSection--
+      this.$store.commit('changeActiveSection', this.activeSection)
       if (this.activeSection < 0) this.activeSection = 0
       this.scrollToSection(this.activeSection, true)
       if (this.activeSection === 1) this.armSection = true
@@ -92,6 +93,7 @@ export default {
     moveUp() {
       this.inMove = true
       this.activeSection++
+      this.$store.commit('changeActiveSection', this.activeSection)
       if (this.activeSection > this.offsets.length - 1)
         this.activeSection = this.offsets.length - 1
       this.scrollToSection(this.activeSection, true)

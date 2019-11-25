@@ -38,9 +38,12 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
+  build: {
+    vendor: ['snapsvg']
+  },
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
   ],
   /*
    ** Nuxt.js modules
@@ -76,8 +79,6 @@ export default {
             fix: true
           }
         })
-
-
       }
     }
   }

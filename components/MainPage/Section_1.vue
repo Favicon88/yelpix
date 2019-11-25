@@ -376,61 +376,64 @@
 <script>
 export default {
   name: 'Section1',
-  mounted() {
-    this.coinRun()
+  data() {
+    return {
+      e: undefined
+    }
   },
-  methods: {
-    coinRun() {
-      const e = Snap('#line-coin')
-      const a = e.select('#coin')
-      const t = a.getBBox()
-      const i = e.select('#trail')
-      const n = Snap.path.getTotalLength(i.attr('d'))
-      const o = i.getPointAtLength(0)
-      a.attr({
-        transform:
-          't' +
-          [o.x - t.h / 2, o.y - t.cy] +
-          'r' +
-          setInterval(function() {
-            10
-          }, 1)
-      }),
-        Snap.animate(
-          0,
-          n,
-          function(e) {
-            const n = i.getPointAtLength(e - 1)
-            a.attr({
+  /* eslint-disable */
+  mounted() {
+    this.e = window.Snap('#line-coin')
+    const a = this.e.select('#coin')
+    const t = a.getBBox()
+    const i = this.e.select('#trail')
+    const n = window.Snap.path.getTotalLength(i.attr('d'))
+    const o = i.getPointAtLength(0)
+    a.attr({
+      transform:
+        't' +
+        [o.x - t.h / 2, o.y - t.cy] +
+        'r' +
+        setInterval(function() {
+          10
+        }, 1)
+    }),
+      window.Snap.animate(
+        0,
+        n,
+        function(e) {
+          const n = i.getPointAtLength(e - 1)
+          a.attr({
+            transform:
+              't' +
+              [n.x - t.h / 2, n.y - t.cy] +
+              'r' +
+              setInterval(function() {
+                2
+              }, 1)
+          })
+        },
+        3500,
+        mina.easeout,
+        function(e) {
+          const n = i.getPointAtLength(e - 1)
+          a.animate(
+            {
               transform:
                 't' +
-                [n.x - t.h / 2, n.y - t.cy] +
+                [n.x + t.h, n.y - t.cy] +
                 'r' +
                 setInterval(function() {
                   2
                 }, 1)
-            })
-          },
-          3500,
-          mina.easeout,
-          function(e) {
-            const n = i.getPointAtLength(e - 1)
-            a.animate(
-              {
-                transform:
-                  't' +
-                  [n.x + t.h, n.y - t.cy] +
-                  'r' +
-                  setInterval(function() {
-                    2
-                  }, 1)
-              },
-              300
-            )
-          }
-        )
-    }
-  }
+            },
+            300
+          )
+        }
+      )
+  },
+  /* eslint-enable */
+  methods: {}
 }
 </script>
 

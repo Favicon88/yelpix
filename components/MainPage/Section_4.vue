@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="scene-element bottom-coin">
-        <div class="coin">
+        <div :class="{ on: activeSection }" class="coin">
           <img src="/images/home/screen-4/coin.png" alt="" />
         </div>
         <a class="button" href="#">Try now</a>
@@ -67,7 +67,29 @@
 
 <script>
 export default {
-  name: 'Section4'
+  name: 'Section4',
+  data() {
+    return {
+      coinOn: false
+    }
+  },
+  computed: {
+    activeSection() {
+      if (this.$store.getters.getActiveSection === 3 && this.coinOn === false) {
+        this.coinOnTrue()
+        return true
+      } else if (this.coinOn === true) {
+        return true
+      } else {
+        return false
+      }
+    }
+  },
+  methods: {
+    coinOnTrue() {
+      this.coinOn = true
+    }
+  }
 }
 </script>
 
@@ -79,8 +101,34 @@ export default {
   overflow: hidden;
 }
 
+#screen_4 .background img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 #screen_4 .scene-element .coin.on {
   right: calc(50% - 150px);
+}
+
+#screen_4 .background img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 #screen_4 .container,
@@ -292,19 +340,6 @@ export default {
     bottom: 250px;
   }
 
-  #screen_4 .background img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    -o-object-fit: cover;
-    object-fit: cover;
-  }
-
   #screen_4 .container .text-wrp .text p {
     font-weight: 400;
     font-style: normal;
@@ -340,6 +375,202 @@ export default {
   #screen_4 .scene-element .coin {
     width: 150px;
     height: 150px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  #screen_4 .scene-element.lights {
+    bottom: 120px;
+  }
+
+  #screen_4 .scene-element.lights .lights-item {
+    width: 350px;
+    height: 550px;
+  }
+
+  #screen_4 .scene-element.lights .lights-item .item-body {
+    margin: 0;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #screen_4 .container .head,
+  #screen_4 .container-fluid .head {
+    padding-top: 150px;
+  }
+
+  #screen_4 .scene-element.lights {
+    padding: 0 30px;
+  }
+
+  #screen_4 .scene-element.lights .lights-item {
+    width: calc((100% - 60px) / 3);
+  }
+
+  #screen_4 .scene-element.lights .lights-item:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #screen_4 .scene-element.bottom-coin {
+    bottom: 100px;
+  }
+
+  #screen_4 .scene-element.bottom-coin .button {
+    width: 200px;
+  }
+
+  #screen_4 .scene-element.lights {
+    padding: 0;
+    bottom: auto;
+    height: 200px;
+    top: 30%;
+  }
+
+  #screen_4 .scene-element.lights .icon {
+    bottom: 0 !important;
+    top: 0;
+    margin: auto 0;
+  }
+
+  #screen_4 .scene-element.lights:after,
+  #screen_4 .scene-element.lights:before {
+    content: '';
+    position: absolute;
+    bottom: -350px;
+    width: 250px;
+    height: 250px;
+    background-image: url(/images/home/screen-4/lights-mobile.png);
+    background-repeat: no-repeat;
+    z-index: 0;
+    background-size: contain;
+    background-position: center bottom;
+  }
+
+  #screen_4 .scene-element.lights:before {
+    left: -90px;
+    transform: rotate(35deg);
+  }
+
+  #screen_4 .scene-element.lights:after {
+    right: -90px;
+    transform: rotate(145deg) scale(-1, -1);
+  }
+
+  #screen_4 .scene-element.lights .lights-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    width: calc((100%-30px) / 3);
+    margin: 0 !important;
+  }
+
+  #screen_4 .scene-element.lights .lights-item:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  #screen_4 .scene-element.lights .lights-item:nth-child(1):before,
+  #screen_4 .scene-element.lights .lights-item:nth-child(3):before {
+    transform: rotate(90deg);
+    left: -10px;
+    right: auto;
+  }
+
+  #screen_4 .scene-element.lights .lights-item .item-light {
+    height: 100%;
+    width: 100%;
+  }
+
+  #screen_4 .scene-element.lights .lights-item .item-light .icon img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  #screen_4 .scene-element.lights .lights-item .item-body {
+    display: none;
+  }
+
+  #screen_4 .scene-element.lights .lights-item .item-light > img {
+    display: none;
+  }
+
+  #screen_4 .scene-element.lights .lights-item .item-body img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #screen_4 .scene-element .coin.on {
+    right: calc(50% - 27.5px);
+  }
+
+  #screen_4 .container .head,
+  #screen_4 .container-fluid .head {
+    padding-top: 150px;
+  }
+
+  #screen_4 .scene-element.bottom-coin {
+    height: 100px;
+  }
+
+  #screen_4 .scene-element.lights {
+    height: 100px;
+    top: 40%;
+    width: 100%;
+  }
+
+  #screen_4 .scene-element.lights:after,
+  #screen_4 .scene-element.lights:before {
+    width: 200px;
+    height: 200px;
+    bottom: -250px;
+  }
+
+  #screen_4 .scene-element.lights .lights-item {
+    width: calc((100%-30px) / 3);
+  }
+
+  #screen_4 .scene-element.lights .lights-item:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  #screen_4 .scene-element.lights .lights-item:before {
+    width: 200px;
+    height: 200px;
+    display: none;
+  }
+
+  #screen_4 .scene-element.lights .lights-item .item-light .icon {
+    bottom: 0;
+    top: 0;
+    margin: auto 0;
+  }
+
+  #screen_4 .scene-element.lights .lights-item .item-light .icon img {
+    max-width: 55px;
+    max-height: 55px;
+  }
+
+  #screen_4 .scene-element .coin {
+    max-width: 55px;
+    max-height: 55px;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+    bottom: -50px;
+  }
+}
+
+@media screen and (max-height: 700px) and (min-width: 768px) {
+  #screen_4 .scene-element.lights {
+    bottom: 0;
+  }
+
+  #screen_4 .scene-element.bottom-coin {
+    bottom: 100px;
   }
 }
 </style>

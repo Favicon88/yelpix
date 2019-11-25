@@ -5,34 +5,46 @@
         <div class="item">
           <div class="ttl">Optioning</div>
           <ul>
-            <li><a href="about-us.html">About Us</a></li>
+            <li><nuxt-link to="/about-us">About Us</nuxt-link></li>
           </ul>
         </div>
         <div class="item">
           <div class="ttl">For Traders</div>
           <ul>
-            <li><a href="assets.html">Assets</a></li>
+            <li><nuxt-link to="/assets">For Traders</nuxt-link></li>
             <li>
-              <a href="customer-support-center.html">Customer Support Center</a>
+              <nuxt-link to="/customer-support-center"
+                >Customer Support Center</nuxt-link
+              >
             </li>
-            <li><a href="how-to-buy-bit-coin.html">How to Buy Bitcoin</a></li>
+            <li>
+              <nuxt-link to="/how-to-buy-bit-coin"
+                >How to Buy Bitcoin</nuxt-link
+              >
+            </li>
           </ul>
         </div>
         <div class="item">
           <div class="ttl">Documentation</div>
           <ul>
             <li>
-              <a href="terms-and-conditions.html">Terms & <br />Conditions</a>
+              <nuxt-link to="/terms-and-conditions"
+                >Terms & <br />Conditions</nuxt-link
+              >
             </li>
             <li>
-              <a href="payment-policy.html">Privacy <br />Policy</a>
-            </li>
-            <li><a href="payment-policy.html">Deposit Promotion</a></li>
-            <li>
-              <a href="withdrawal-policy.html">Withdrawal <br />Policy </a>
+              <nuxt-link to="/privacy-policy">Privacy <br />Policy</nuxt-link>
             </li>
             <li>
-              <a href="refund-policy.html">Refund <br />Policy</a>
+              <nuxt-link to="/payment-policy">Deposit Promotion</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/withdrawal-policy"
+                >Withdrawal <br />Policy</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link to="/refund-policy">Refund <br />Policy</nuxt-link>
             </li>
           </ul>
         </div>
@@ -279,6 +291,65 @@ export default {
 
   .footer .menu-side ul li {
     margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer .container,
+  .footer .container-fluid {
+    padding: 0 30px;
+  }
+
+  .footer .menu-side ul li {
+    display: block;
+    width: 100%;
+  }
+
+  .footer .menu-side ul li:nth-child(1) br,
+  .footer .menu-side ul li:nth-child(2) br,
+  .footer .menu-side ul li:nth-child(4) br,
+  .footer .menu-side ul li:nth-child(5) br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer .container > div,
+  .footer .container-fluid > div {
+    width: 100%;
+  }
+
+  .not-index .footer {
+    max-height: initial;
+    height: 100%;
+    min-height: 100%;
+    overflow: inherit;
+  }
+
+  .footer .info-side .lang-wrp .dropdown {
+    width: 70px;
+  }
+
+  .footer {
+    max-height: 100vh;
+    overflow: auto;
+  }
+
+  .footer .container,
+  .footer .container-fluid {
+    padding: 0 15px;
+  }
+
+  .footer .container > div {
+    width: 100%;
+  }
+
+  .footer .info-side {
+    padding-left: 0;
+  }
+
+  .footer .info-side .lang-wrp .txt {
+    padding-left: 0;
   }
 }
 </style>
