@@ -1,0 +1,16 @@
+{
+    "lang": "中文",
+    "header": {
+        "about-us": "About Us",
+        "for-traders": "For Traders",
+        "documentation": "Documentation",
+        "terms-and-conditions": "Terms & About Us",
+        "privacy-policy": "Privacy Policy",
+        "payment-policy": "Deposit Promotion",
+        "withdrawal-policy": "Withdrawal Policy"
+    },
+    "index": {
+        "sign-up": "サインアップ",
+        "login": "ログイン"
+    }
+}

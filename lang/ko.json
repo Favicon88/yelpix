@@ -1,0 +1,16 @@
+{
+    "lang": "KR",
+    "header": {
+        "about-us": "회사 소개",
+        "for-traders": "For Traders",
+        "documentation": "Documentation",
+        "terms-and-conditions": "Terms & About Us",
+        "privacy-policy": "Privacy Policy",
+        "payment-policy": "Deposit Promotion",
+        "withdrawal-policy": "Withdrawal Policy"
+    },
+    "index": {
+        "sign-up": "가입",
+        "login": "login"
+    }
+}

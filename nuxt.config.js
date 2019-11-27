@@ -53,7 +53,38 @@ export default {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['nuxt-i18n', {
+      detectBrowserLanguage: {
+        useCookie: true,
+        cookieKey: 'i18n_redirected',
+        alwaysRedirect: false,
+        fallbackLocale: 'en'
+      },
+      locales: [
+        {
+          name: 'EN',
+          code: 'en',
+          iso: 'en-US',
+          file: 'en.json'
+        },
+        {
+          name: 'Kr',
+          code: 'ko',
+          iso: 'ko',
+          file: 'ko.json'
+        },
+        {
+          name: '中文',
+          code: 'zh',
+          iso: 'zh',
+          file: 'zh.json'
+        }
+      ],
+      lazy: true,
+      defaultLocale: 'en',
+      langDir: 'lang/'
+    }]
   ],
   /*
    ** Axios module configuration

@@ -114,6 +114,12 @@ export default {
   object-fit: cover;
 }
 
+#screen_4 .scene-element.bottom-coin .button:hover {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
 #screen_4 .scene-element .coin.on {
   right: calc(50% - 150px);
 }

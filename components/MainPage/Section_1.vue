@@ -365,8 +365,8 @@
     </div>
     <div class="container">
       <div class="buttons">
-        <a class="button filled" href="#">Sign Up</a
-        ><a class="button rounded" href="#">Login</a>
+        <a class="button filled" href="#">{{ $t('index.sign-up') }}</a
+        ><a class="button rounded" href="#">{{ $t('index.login') }}</a>
       </div>
     </div>
     <div id="section-scroller-button"></div>
@@ -383,6 +383,7 @@ export default {
   },
   /* eslint-disable */
   mounted() {
+    if (process.browser) {
     this.e = window.Snap('#line-coin')
     const a = this.e.select('#coin')
     const t = a.getBBox()
@@ -431,13 +432,14 @@ export default {
           )
         }
       )
+    }
   },
   /* eslint-enable */
   methods: {}
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #screen_1 {
   z-index: 1;
   position: relative;
