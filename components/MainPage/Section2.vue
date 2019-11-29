@@ -50,14 +50,16 @@
 
 <script>
 export default {
-  name: 'Section2'
+  name: 'HomeSection2'
 }
 </script>
 
 <style lang="scss" scoped>
 #screen_2 {
+  position: absolute;
+  top: 100%;
+  left: 0px;
   height: 100vh;
-  position: relative;
   width: 100%;
   overflow: hidden;
 }

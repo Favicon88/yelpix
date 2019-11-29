@@ -114,7 +114,7 @@
 
 <script>
 export default {
-  name: 'Section3',
+  name: 'HomeSection3',
   data() {
     return {
       coinOn: false
@@ -140,8 +140,10 @@ export default {
 
 <style lang="scss" scoped>
 #screen_3 {
+  position: absolute;
+  top: 200%;
+  left: 0px;
   height: 100vh;
-  position: relative;
   width: 100%;
   overflow: hidden;
 }

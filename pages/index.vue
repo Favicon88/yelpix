@@ -3,16 +3,16 @@
     <AudioFile />
     <div class="content">
       <div id="one-scroll">
-        <Section1 :class="{ active: activeSection == 0 }" class="section" />
-        <Section2
+        <HomeSection1 :class="{ active: activeSection == 0 }" class="section" />
+        <HomeSection2
           :class="{
             active: activeSection == 1,
             on: sectionArm
           }"
           class="section"
         />
-        <Section3 :class="{ active: activeSection == 2 }" class="section" />
-        <Section4 :class="{ active: activeSection == 3 }" class="section" />
+        <HomeSection3 :class="{ active: activeSection == 2 }" class="section" />
+        <HomeSection4 :class="{ active: activeSection == 3 }" class="section" />
       </div>
     </div>
   </div>
@@ -20,18 +20,18 @@
 
 <script>
 import AudioFile from '@/components/AudioFile'
-import Section1 from '@/components/MainPage/Section_1'
-import Section2 from '@/components/MainPage/Section_2'
-import Section3 from '@/components/MainPage/Section_3'
-import Section4 from '@/components/MainPage/Section_4'
+import HomeSection1 from '@/components/MainPage/Section1'
+import HomeSection2 from '@/components/MainPage/Section2'
+import HomeSection3 from '@/components/MainPage/Section3'
+import HomeSection4 from '@/components/MainPage/Section4'
 
 export default {
   components: {
     AudioFile,
-    Section1,
-    Section2,
-    Section3,
-    Section4
+    HomeSection1,
+    HomeSection2,
+    HomeSection3,
+    HomeSection4
   },
   data() {
     return {
@@ -62,7 +62,6 @@ export default {
       passive: false
     }) // mobile devices
   },
-  beforeDestroy() {},
   destroyed() {
     window.removeEventListener('mousewheel', this.handleMouseWheel, {
       passive: false

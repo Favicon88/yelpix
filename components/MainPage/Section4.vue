@@ -67,7 +67,7 @@
 
 <script>
 export default {
-  name: 'Section4',
+  name: 'HomeSection4',
   data() {
     return {
       coinOn: false
@@ -95,8 +95,10 @@ export default {
 
 <style lang="scss" scoped>
 #screen_4 {
+  position: absolute;
+  top: 300%;
+  left: 0px;
   height: 100vh;
-  position: relative;
   width: 100%;
   overflow: hidden;
 }
@@ -321,6 +323,29 @@ export default {
 #screen_4 .scene-element .coin img {
   width: 100%;
   height: 100%;
+}
+
+.logos {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  height: 80px;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  transition-delay: 1.3s;
+}
+.logos img {
+  margin: 0 auto;
+  height: auto;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+#screen_4.active .logos {
+  opacity: 1;
 }
 
 @media screen and (max-width: 2000px) {
