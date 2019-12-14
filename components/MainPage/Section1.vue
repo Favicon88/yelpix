@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import LineCoin from '@/static/images/line-coin.svg?inline'
+import LineCoin from '@/assets/line-coin.svg?inline'
 export default {
   name: 'HomeSection1',
   components: {
