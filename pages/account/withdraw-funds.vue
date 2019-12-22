@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'HowToBuyBitCoin'
+  name: 'WithdrawFunds'
 }
 </script>
 

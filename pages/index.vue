@@ -147,7 +147,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .one-scroll .screen {
   position: relative;
   height: 100vh;
