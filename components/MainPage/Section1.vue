@@ -20,8 +20,12 @@
     </div>
     <div class="container">
       <div class="buttons">
-        <a class="button filled" href="#">{{ $t('index.sign-up') }}</a
-        ><a class="button rounded" href="#">{{ $t('index.login') }}</a>
+        <nuxt-link :to="localePath('sign-up')" class="button filled">{{
+          $t('index.sign-up')
+        }}</nuxt-link>
+        <nuxt-link :to="localePath('login')" class="button filled">{{
+          $t('index.login')
+        }}</nuxt-link>
       </div>
     </div>
     <div id="section-scroller-button"></div>

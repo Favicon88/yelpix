@@ -23,7 +23,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/css/styles.css', '~/assets/css/fonts.css'],
+  css: ['~/assets/css/styles.css', '~/assets/css/fonts.css', '~/assets/fontawesome-free/css/all.min.css'],
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
