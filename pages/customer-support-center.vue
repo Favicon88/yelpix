@@ -156,4 +156,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+div {
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+}
+</style>

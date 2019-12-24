@@ -209,6 +209,7 @@ svg#line-coin #trail {
   border-right: 0.3em solid transparent;
   border-bottom: 0;
   border-left: 0.3em solid transparent;
+  color: #fff;
 }
 
 .header .menu-wrp ul li ul {

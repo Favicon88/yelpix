@@ -21,6 +21,18 @@ a:focus {
 	color: #e0242e
 }
 
+a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
 hr {
 	max-width: 100px;
 	margin: 25px auto 0;
@@ -311,12 +323,6 @@ section.cta {
 	background-position: center;
 	background-size: cover;
 	background-color: #feeed7!important
-}
-
-section.about1 {
-	background-position: 0 -138px!important;
-	background-repeat: repeat-x!important;
-	background-color: #212121!important
 }
 
 section.about1.top-sec {
@@ -1974,6 +1980,16 @@ html body {
 	text-align: left;
 	background-color: #1b1947
 }
+
+div, p, #section-scroller-button .txt, .footer .info-side .lang-wrp ul a, .footer .info-side .lang-wrp ul li, .footer .info-side .risk, .footer .menu-side ul li a, .one-scroll #screen_2 .container .text-wrp .text p, .one-scroll #screen_3 .scene-element .text-wrp p, .one-scroll #screen_4 .container .text-wrp .text p {
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+div {
+	font-size: 18px;
+	line-height: 24px;
+	color: #2f2f2f;
+  }
 
 body .sidebar {
 	margin: 0;
@@ -4041,7 +4057,7 @@ a.btn:hover {
 	width: 100%;
 	height: calc(1.5em+0.75rem+2px);
 	padding: .375rem .75rem;
-	font-size: 1rem;
+	font-size: 1.9rem;
 	font-weight: 400;
 	line-height: 1.5;
 	color: #6e707e;
@@ -4644,7 +4660,7 @@ textarea.form-control.is-invalid {
 	user-select: none;
 	background-color: transparent;
 	border: 1px solid transparent;
-	padding: .6rem .75rem;
+	padding: .6rem 1.2rem;
 	font-size: 1rem;
 	line-height: 1.5;
 	border-radius: 25px;
@@ -4652,6 +4668,19 @@ textarea.form-control.is-invalid {
 	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out
+}
+
+#content a.btn:after,
+a.collapse-item:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: transparent;
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -4692,7 +4721,8 @@ fieldset:disabled a.btn {
 
 .btn-primary:hover {
 	color: #56470a;
-	background: #fff1b8
+	background: #fff1b8;
+	border-color: transparent;
 }
 
 .btn-primary:focus,
@@ -7088,7 +7118,7 @@ input[type="button"].btn-block {
 }
 
 .card-header {
-	padding: .75rem 1.95rem;
+	padding: 1.5rem 1.95rem;
 	margin-bottom: 0;
 	background-color: #f8f9fc;
 	border-bottom: 1px solid #e3e6f0
@@ -13580,6 +13610,7 @@ a:focus {
 		text-align: left;
 		padding: 1rem 2rem;
 		width: 100%;
+		cursor: pointer;
 	}
 	.sidebar .nav-item .nav-link i {
 		font-size: 1.5rem;

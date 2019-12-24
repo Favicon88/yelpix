@@ -162,6 +162,10 @@ export default {
   overflow: hidden;
 }
 
+section {
+  padding: 0;
+}
+
 .container {
   margin: 0 auto;
   min-height: 100vh;

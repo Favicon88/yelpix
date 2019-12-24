@@ -91,7 +91,30 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.h3,
+h3 {
+  font-size: 40px;
+  line-height: 50px;
+  position: relative;
+}
+
+.tab-pane h3 {
+  margin-top: 35px;
+  text-transform: none;
+}
+
+div {
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.tab-content > .tab-pane {
+  background-color: #212121;
+  padding: 15px;
+}
+
 .nav .nav-link {
   cursor: pointer;
   color: #b52c49;
@@ -108,5 +131,9 @@ export default {
   color: #1b1947;
   background-color: #f5f5f5;
   border-color: #dddfeb #dddfeb #fff;
+}
+
+.card-body {
+  padding: 0;
 }
 </style>

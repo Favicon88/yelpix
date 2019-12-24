@@ -45,43 +45,49 @@
         data-parent="#accordionSidebar"
       >
         <div class="py-2 sub-bg collapse-inner rounded">
-          <a class="collapse-item" href="account-btc-deposit.html"
-            >BTC Deposit</a
+          <nuxt-link
+            :to="localePath('account-btc-deposit')"
+            class="collapse-item"
+            >BTC Deposit</nuxt-link
           >
-          <a class="collapse-item" href="account-eth-deposit.html"
-            >BTC 구매 안내</a
+          <nuxt-link
+            :to="localePath('account-eth-deposit')"
+            class="collapse-item"
+            >BTC 구매 안내</nuxt-link
           >
         </div>
       </div>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="account-withdraw-funds.html">
-        <span>Withdraw Funds</span></a
+      <nuxt-link :to="localePath('account-withdraw-funds')" class="nav-link"
+        ><span>Withdraw Funds</span></nuxt-link
       >
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="account-exchange.html">
-        <span>Exchange</span></a
+      <nuxt-link :to="localePath('account-exchange')" class="nav-link"
+        ><span>Exchange</span></nuxt-link
       >
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="account-balance-history.html">
-        <span>Balance History</span></a
+      <nuxt-link :to="localePath('account-balance-history')" class="nav-link"
+        ><span>Balance History</span></nuxt-link
       >
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="account-trading-history.html">
-        <span>Trading History</span></a
+      <nuxt-link :to="localePath('account-trading-history')" class="nav-link"
+        ><span>Trading History</span></nuxt-link
       >
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="account-profits-loss.html">
-        <span>Profits and Loss</span></a
+      <nuxt-link :to="localePath('account-profits-loss')" class="nav-link"
+        ><span>Profits and Loss</span></nuxt-link
       >
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#"> <span>Log Out</span></a>
+      <nuxt-link :to="localePath('login')" class="nav-link"
+        ><span>Log Out</span></nuxt-link
+      >
     </li>
 
     <!-- Divider -->

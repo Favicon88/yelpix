@@ -269,6 +269,7 @@ export default {
   width: 100%;
   position: relative;
   padding: 15px;
+  font-size: 18px;
   border-radius: 0;
   border: none;
   background-color: #fff;
@@ -382,6 +383,22 @@ export default {
   border-color: #fff;
 }
 
+div {
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+}
+
+input {
+  outline: 0;
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+  width: auto;
+  font-size: 14px;
+  font-family: inherit;
+}
+
 @media screen and (max-width: 2000px) {
   #screen_3 .scene-element.lights {
     bottom: 200px;
@@ -431,6 +448,12 @@ export default {
   #screen_3 .scene-element .text-wrp .button {
     margin-top: 25px;
   }
+
+  .h1,
+  h1 {
+    font-size: 84px;
+    line-height: 108px;
+  }
 }
 
 @media screen and (max-width: 1600px) {
@@ -456,6 +479,12 @@ export default {
   #screen_3 .scene-element .text-wrp p {
     font-size: 22px;
     line-height: 32px;
+  }
+
+  .h1,
+  h1 {
+    font-size: 48px;
+    line-height: 68px;
   }
 }
 

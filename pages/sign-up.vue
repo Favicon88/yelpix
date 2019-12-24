@@ -96,7 +96,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import url('assets/css/new-age.css');
 .bg-red {
   background: #1b1947;
